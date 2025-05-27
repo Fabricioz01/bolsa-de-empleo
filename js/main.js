@@ -312,9 +312,7 @@ function searchJobs(searchTerm) {
   });
 }
 
-// Event listeners globales
 document.addEventListener('click', function (e) {
-  // Manejar clicks en botones de acción simulada (pero NO en formularios específicos)
   if (
     e.target.classList.contains('btn-login') &&
     !e.target.closest('#loginForm') &&
