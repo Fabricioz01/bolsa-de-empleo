@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Perfil - ULEAM Empleos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+      <div class="container">
+        <a class="navbar-brand text-primary-custom" href="home.html">
+          <i class="bi bi-mortarboard-fill me-2"></i>ULEAM Empleos
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">
+                <i class="bi bi-house me-1"></i>Inicio
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="jobs.html">
+                <i class="bi bi-briefcase me-1"></i>Empleos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="profile.html">
+                <i class="bi bi-person me-1"></i>Mi Perfil
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">
+                <i class="bi bi-envelope me-1"></i>Contacto
+              </a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                <i class="bi bi-person-circle me-1"></i>Danny Zambrano
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="profile.html">
+                    <i class="bi bi-person me-2"></i>Mi Perfil
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item btn-logout" href="#">
+                    <i class="bi bi-box-arrow-right me-2"></i>Cerrar Sesión
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+      <div class="row">
+        <!-- Profile Sidebar -->
+        <div class="col-lg-4 mb-4">
+          <div class="card">
+            <div class="card-body text-center">
+              <img
+                src="../img/danny.jpeg"
+                alt="Foto de Perfil"
+                class="profile-avatar mb-3"
+              />
+              <h4 class="mb-1">Danny Jesus Zambrano Mera</h4>
+              <p class="text-muted mb-3">Ingeniero en TI</p>
+              <div class="row text-center">
+                <div class="col-6">
+                  <h6 class="text-primary-custom">8</h6>
+                  <small class="text-muted">Postulaciones</small>
+                </div>
+                <div class="col-6">
+                  <h6 class="text-primary-custom">75%</h6>
+                  <small class="text-muted">Perfil Completo</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="card mt-4">
+            <div class="card-header">
+              <h6 class="mb-0">
+                <i class="bi bi-person-lines-fill me-2"></i>Información de
+                Contacto
+              </h6>
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <small class="text-muted d-block">Email</small>
+                <span
+                  ><i class="bi bi-envelope me-2"></i
+                  >e1315555795@live.uleam.edu.ec</span
+                >
+              </div>
+              <div class="mb-3">
+                <small class="text-muted d-block">Teléfono</small>
+                <span
+                  ><i class="bi bi-telephone me-2"></i>+593 99 413 8252</span
+                >
+              </div>
+              <div class="mb-3">
+                <small class="text-muted d-block">Ubicación</small>
+                <span
+                  ><i class="bi bi-geo-alt me-2"></i>Leonidas Proaño,
+                  Montecristi</span
+                >
+              </div>
+              <div class="mb-0">
+                <small class="text-muted d-block">Fecha de Graduación</small>
+                <span><i class="bi bi-calendar me-2"></i>Diciembre 2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="col-lg-8">
+          <!-- Personal Information -->
+          <div class="card mb-4">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h5 class="mb-0">
+                <i class="bi bi-person-gear me-2"></i>Información Personal
+              </h5>
+              <button
+                class="btn btn-outline-primary btn-sm"
+                data-bs-toggle="modal"
+                data-bs-target="#editPersonalModal"
+              >
+                <i class="bi bi-pencil me-1"></i>Editar
+              </button>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Nombres</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="Danny Jesus"
+                      readonly
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Apellidos</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="Zambrano Mera"
+                      readonly
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Cédula</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="1312345678"
+                      readonly
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Fecha de Nacimiento</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      value="2003-05-15"
+                      readonly
+                    />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Dirección</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Leonidas Proaño, Montecristi"
+                    readonly
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Academic Information -->
+          <div class="card mb-4">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h5 class="mb-0">
+                <i class="bi bi-mortarboard me-2"></i>Información Académica
+              </h5>
+              <button class="btn btn-outline-primary btn-sm">
+                <i class="bi bi-pencil me-1"></i>Editar
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Carrera</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Tecnología de la Información"
+                    readonly
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Fecha de Graduación</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Diciembre 2023"
+                    readonly
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Promedio</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="8.75"
+                    readonly
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Título Obtenido</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Ingeniero en TI"
+                    readonly
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Experience -->
+          <div class="card mb-4">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h5 class="mb-0">
+                <i class="bi bi-briefcase me-2"></i>Experiencia Profesional
+              </h5>
+              <button class="btn btn-outline-success btn-sm">
+                <i class="bi bi-plus me-1"></i>Agregar
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="border-start border-primary border-3 ps-3 mb-4">
+                <h6 class="fw-bold">Desarrollador Junior</h6>
+                <p class="text-primary-custom mb-1">
+                  ZGames • Manta, Ecuador
+                </p>
+                <small class="text-muted">Enero 2024 - Presente</small>
+                <p class="mt-2 mb-0">
+                  Desarrollo de aplicaciones web utilizando Angular y Node.js.
+                  Colaboración en proyectos de e-commerce y sistemas de gestión.
+                </p>
+              </div>
+              <div class="border-start border-secondary border-3 ps-3">
+                <h6 class="fw-bold">Practicante de Desarrollo</h6>
+                <p class="text-primary-custom mb-1">
+                  Innovatech Solutions • Portoviejo, Ecuador
+                </p>
+                <small class="text-muted">Junio 2023 - Diciembre 2023</small>
+                <p class="mt-2 mb-0">
+                  Prácticas pre-profesionales en desarrollo de software.
+                  Participación en proyectos de automatización y mejora de
+                  procesos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="card mb-4">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h5 class="mb-0">
+                <i class="bi bi-gear me-2"></i>Habilidades y Competencias
+              </h5>
+              <button class="btn btn-outline-success btn-sm">
+                <i class="bi bi-plus me-1"></i>Agregar
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h6 class="text-primary-custom">Lenguajes de Programación</h6>
+                  <div class="mb-3">
+                    <span class="badge bg-primary me-2 mb-2">JavaScript</span>
+                    <span class="badge bg-primary me-2 mb-2">Python</span>
+                    <span class="badge bg-primary me-2 mb-2">Java</span>
+                    <span class="badge bg-primary me-2 mb-2">PHP</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <h6 class="text-primary-custom">Frameworks y Tecnologías</h6>
+                  <div class="mb-3">
+                    <span class="badge bg-success me-2 mb-2">Angular</span>
+                    <span class="badge bg-success me-2 mb-2">Node.js</span>
+                    <span class="badge bg-success me-2 mb-2">Bootstrap</span>
+                    <span class="badge bg-success me-2 mb-2">MySQL</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <h6 class="text-primary-custom">Herramientas</h6>
+                  <div class="mb-3">
+                    <span class="badge bg-info me-2 mb-2">Git</span>
+                    <span class="badge bg-info me-2 mb-2">Docker</span>
+                    <span class="badge bg-info me-2 mb-2">VS Code</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <h6 class="text-primary-custom">Idiomas</h6>
+                  <div class="mb-3">
+                    <span class="badge bg-warning text-dark me-2 mb-2"
+                      >Español (Nativo)</span
+                    >
+                    <span class="badge bg-warning text-dark me-2 mb-2"
+                      >Inglés (Intermedio)</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <button class="btn btn-primary w-100 btn-save">
+                    <i class="bi bi-check-circle me-2"></i>Guardar Cambios
+                  </button>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <button class="btn btn-outline-secondary w-100">
+                    <i class="bi bi-download me-2"></i>Descargar CV
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Personal Info Modal -->
+    <div class="modal fade" id="editPersonalModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Editar Información Personal</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Nombres</label>
+                  <input type="text" class="form-control" value="Danny Jesus" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Apellidos</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Zambrano Mera"
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Teléfono</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  value="+593 98-765-4321"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Dirección</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  value="Av. 4 de Noviembre y Calle 15, Manta"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-save"
+              data-bs-dismiss="modal"
+            >
+              Guardar Cambios
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-0">
+              &copy; 2025 ULEAM Empleos. Todos los derechos reservados.
+            </p>
+          </div>
+          <div class="col-md-6 text-end">
+            <a href="contact.html" class="text-white text-decoration-none me-3"
+              >Contacto</a
+            >
+            <a href="#" class="text-white text-decoration-none">Ayuda</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

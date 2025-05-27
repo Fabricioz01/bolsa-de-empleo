@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - ULEAM Empleos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+      <div class="container">
+        <a class="navbar-brand text-primary-custom" href="home.html">
+          <i class="bi bi-mortarboard-fill me-2"></i>ULEAM Empleos
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">
+                <i class="bi bi-house me-1"></i>Inicio
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="jobs.html">
+                <i class="bi bi-briefcase me-1"></i>Empleos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">
+                <i class="bi bi-person me-1"></i>Mi Perfil
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">
+                <i class="bi bi-envelope me-1"></i>Contacto
+              </a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                <i class="bi bi-person-circle me-1"></i>Danny Zambrano
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="profile.html">
+                    <i class="bi bi-person me-2"></i>Mi Perfil
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item btn-logout" href="#">
+                    <i class="bi bi-box-arrow-right me-2"></i>Cerrar Sesión
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="bg-primary text-white py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h1 class="display-6 fw-bold mb-3">Contacto y Soporte</h1>
+            <p class="lead mb-0">
+              ¿Tienes alguna duda o necesitas ayuda? Estamos aquí para apoyarte
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <i class="bi bi-headset" style="font-size: 4rem; opacity: 0.3"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+      <div class="row">
+        <!-- Contact Form -->
+        <div class="col-lg-8 mb-5">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">
+                <i class="bi bi-envelope-fill me-2"></i>Envíanos un Mensaje
+              </h5>
+              <small class="text-muted"
+                >Te responderemos lo antes posible</small
+              >
+            </div>
+            <div class="card-body">
+              <form id="contactForm" novalidate>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="firstName" class="form-label">
+                      <i class="bi bi-person me-2"></i>Nombres *
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="firstName"
+                      value="Danny Jesus"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Por favor ingresa tu nombre.
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="lastName" class="form-label">
+                      <i class="bi bi-person me-2"></i>Apellidos *
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="lastName"
+                      value="Zambrano Mera"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Por favor ingresa tus apellidos.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">
+                      <i class="bi bi-envelope me-2"></i>Correo Electrónico *
+                    </label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      value="e1315555795@live.uleam.edu.ec"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Por favor ingresa un correo válido.
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label">
+                      <i class="bi bi-telephone me-2"></i>Teléfono
+                    </label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="phone"
+                      value="+593 99 413 8252"
+                      placeholder="+593 9X-XXX-XXXX"
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="subject" class="form-label">
+                    <i class="bi bi-tag me-2"></i>Asunto *
+                  </label>
+                  <select class="form-select" id="subject" required>
+                    <option value="">Selecciona un tema</option>
+                    <option value="soporte-tecnico">Soporte Técnico</option>
+                    <option value="problema-postulacion">
+                      Problema con Postulación
+                    </option>
+                    <option value="actualizar-perfil">Actualizar Perfil</option>
+                    <option value="eliminar-cuenta">Eliminar Cuenta</option>
+                    <option value="sugerencia">Sugerencia</option>
+                    <option value="empresa-registro">
+                      Registro de Empresa
+                    </option>
+                    <option value="otro">Otro</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Por favor selecciona un asunto.
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="priority" class="form-label">
+                    <i class="bi bi-exclamation-triangle me-2"></i>Prioridad
+                  </label>
+                  <select class="form-select" id="priority">
+                    <option value="baja">Baja</option>
+                    <option value="media" selected>Media</option>
+                    <option value="alta">Alta</option>
+                    <option value="urgente">Urgente</option>
+                  </select>
+                </div>
+
+                <div class="mb-4">
+                  <label for="message" class="form-label">
+                    <i class="bi bi-chat-text me-2"></i>Mensaje *
+                  </label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="6"
+                    required
+                    placeholder="Describe tu consulta o problema de manera detallada..."
+                  ></textarea>
+                  <div class="invalid-feedback">
+                    Por favor escribe tu mensaje.
+                  </div>
+                  <div class="form-text">
+                    Mínimo 10 caracteres. Sé específico para poder ayudarte
+                    mejor.
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="attachment" class="form-label">
+                    <i class="bi bi-paperclip me-2"></i>Archivo Adjunto
+                    (Opcional)
+                  </label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="attachment"
+                    accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+                  />
+                  <div class="form-text">
+                    Máximo 5MB. Formatos: PDF, JPG, PNG, DOC, DOCX
+                  </div>
+                </div>
+
+                <div class="mb-4 form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="newsletter"
+                  />
+                  <label class="form-check-label" for="newsletter">
+                    Deseo recibir notificaciones sobre nuevas ofertas de empleo
+                    y actualizaciones de la plataforma
+                  </label>
+                </div>
+
+                <div class="d-grid">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-lg btn-contact"
+                  >
+                    <i class="bi bi-send me-2"></i>Enviar Mensaje
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="col-lg-4">
+          <!-- Contact Details -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h6 class="mb-0">
+                <i class="bi bi-info-circle me-2"></i>Información de Contacto
+              </h6>
+            </div>
+            <div class="card-body">
+              <div class="mb-4">
+                <h6 class="text-primary-custom">
+                  <i class="bi bi-envelope-fill me-2"></i>Email
+                </h6>
+                <p class="mb-0">soporte@uleam-empleos.ec</p>
+                <small class="text-muted">Respuesta en 24 horas</small>
+              </div>
+
+              <div class="mb-4">
+                <h6 class="text-primary-custom">
+                  <i class="bi bi-telephone-fill me-2"></i>Teléfono
+                </h6>
+                <p class="mb-0">+593 5-262-0000 Ext. 123</p>
+                <small class="text-muted"
+                  >Lunes a Viernes: 8:00 AM - 5:00 PM</small
+                >
+              </div>
+
+              <div class="mb-4">
+                <h6 class="text-primary-custom">
+                  <i class="bi bi-geo-alt-fill me-2"></i>Dirección
+                </h6>
+                <p class="mb-0">
+                  Ciudadela Universitaria Vía Circunvalación<br />
+                  Manta, Manabí, Ecuador
+                </p>
+              </div>
+
+              <div class="mb-0">
+                <h6 class="text-primary-custom">
+                  <i class="bi bi-clock-fill me-2"></i>Horario de Atención
+                </h6>
+                <p class="mb-1">
+                  <strong>Lunes - Viernes:</strong> 8:00 AM - 5:00 PM<br />
+                  <strong>Sábados:</strong> 9:00 AM - 1:00 PM<br />
+                  <strong>Domingos:</strong> Cerrado
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h6 class="mb-0">
+                <i class="bi bi-question-circle me-2"></i>Preguntas Frecuentes
+              </h6>
+            </div>
+            <div class="card-body">
+              <div class="accordion accordion-flush" id="faqAccordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq1"
+                    >
+                      ¿Cómo actualizo mi perfil?
+                    </button>
+                  </h2>
+                  <div
+                    id="faq1"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      Ve a "Mi Perfil" en el menú principal y haz clic en
+                      "Editar" en la sección que deseas actualizar.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq2"
+                    >
+                      ¿Cómo postulo a un empleo?
+                    </button>
+                  </h2>
+                  <div
+                    id="faq2"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      Encuentra el empleo de tu interés y haz clic en
+                      "Postular". Completa el formulario y adjunta tus
+                      documentos.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq3"
+                    >
+                      ¿Cuándo sabré el resultado?
+                    </button>
+                  </h2>
+                  <div
+                    id="faq3"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      Los empleadores generalmente responden en 5-10 días
+                      hábiles. Te notificaremos por email sobre cualquier
+                      actualización.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media -->
+          <div class="card">
+            <div class="card-header">
+              <h6 class="mb-0"><i class="bi bi-share me-2"></i>Síguenos</h6>
+            </div>
+            <div class="card-body text-center">
+              <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a href="#" class="btn btn-outline-info btn-sm">
+                  <i class="bi bi-twitter"></i>
+                </a>
+                <a href="#" class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="#" class="btn btn-outline-danger btn-sm">
+                  <i class="bi bi-instagram"></i>
+                </a>
+              </div>
+              <p class="mt-3 mb-0 small text-muted">
+                Mantente al día con las últimas oportunidades laborales
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <h6 class="text-white mb-3">ULEAM Empleos</h6>
+            <p class="small mb-0">
+              Plataforma oficial de empleos para graduados de la Universidad
+              Laica Eloy Alfaro de Manabí.
+            </p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h6 class="text-white mb-3">Enlaces Útiles</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a href="home.html" class="text-white text-decoration-none"
+                  >Inicio</a
+                >
+              </li>
+              <li>
+                <a href="jobs.html" class="text-white text-decoration-none"
+                  >Empleos</a
+                >
+              </li>
+              <li>
+                <a href="profile.html" class="text-white text-decoration-none"
+                  >Mi Perfil</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">Ayuda</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h6 class="text-white mb-3">Contacto</h6>
+            <ul class="list-unstyled small">
+              <li class="text-white">📧 soporte@uleam-empleos.ec</li>
+              <li class="text-white">📞 +593 5-262-0000</li>
+              <li class="text-white">📍 Manta, Manabí, Ecuador</li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.2)" />
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-0">
+              &copy; 2025 ULEAM Empleos. Todos los derechos reservados.
+            </p>
+          </div>
+          <div class="col-md-6 text-end">
+            <a href="#" class="text-white text-decoration-none me-3"
+              >Términos de Uso</a
+            >
+            <a href="#" class="text-white text-decoration-none"
+              >Política de Privacidad</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

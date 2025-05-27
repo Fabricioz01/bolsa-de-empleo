@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Postular - ULEAM Empleos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+      <div class="container">
+        <a class="navbar-brand text-primary-custom" href="home.html">
+          <i class="bi bi-mortarboard-fill me-2"></i>ULEAM Empleos
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">
+                <i class="bi bi-house me-1"></i>Inicio
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="jobs.html">
+                <i class="bi bi-briefcase me-1"></i>Empleos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">
+                <i class="bi bi-person me-1"></i>Mi Perfil
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">
+                <i class="bi bi-envelope me-1"></i>Contacto
+              </a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                <i class="bi bi-person-circle me-1"></i>Danny Zambrano
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="profile.html">
+                    <i class="bi bi-person me-2"></i>Mi Perfil
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item btn-logout" href="#">
+                    <i class="bi bi-box-arrow-right me-2"></i>Cerrar Sesión
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="home.html">Inicio</a></li>
+          <li class="breadcrumb-item"><a href="jobs.html">Empleos</a></li>
+          <li class="breadcrumb-item">
+            <a href="job-detail.html">Desarrollador Full Stack</a>
+          </li>
+          <li class="breadcrumb-item active">Postular</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Application Header -->
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="card border-0 bg-primary text-white mb-4">
+            <div class="card-body p-4">
+              <div class="row align-items-center">
+                <div class="col-md-8">
+                  <h1 class="display-6 fw-bold mb-2">Postular a Empleo</h1>
+                  <h4 class="mb-1">Desarrollador Full Stack</h4>
+                  <p class="mb-3">ZGames Technology • Manta, Manabí</p>
+                  <span class="badge bg-light text-dark fs-6"
+                    >$800 - $1200 USD</span
+                  >
+                </div>
+                <div class="col-md-4 text-center">
+                  <i
+                    class="bi bi-send-fill"
+                    style="font-size: 4rem; opacity: 0.3"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Application Form -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <form id="applicationForm" novalidate>
+            <!-- Personal Information -->
+            <div class="card mb-4">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <i class="bi bi-person-fill me-2"></i>Información Personal
+                </h5>
+                <small class="text-muted"
+                  >Esta información se obtiene de tu perfil</small
+                >
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="firstName" class="form-label">Nombres</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="firstName"
+                      value="Danny Jesus"
+                      readonly
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="lastName" class="form-label">Apellidos</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="lastName"
+                      value="Zambrano Mera"
+                      readonly
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      value="e1315555795@live.uleam.edu.ec"
+                      readonly
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label">Teléfono</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="phone"
+                      value="+593 99 413 8252"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Academic Information -->
+            <div class="card mb-4">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <i class="bi bi-mortarboard me-2"></i>Información Académica
+                </h5>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="career" class="form-label">Carrera</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="career"
+                      value="Tecnología de la Información"
+                      readonly
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="graduationDate" class="form-label"
+                      >Fecha de Graduación</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="graduationDate"
+                      value="Diciembre 2023"
+                      readonly
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="gpa" class="form-label">Promedio</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="gpa"
+                      value="8.75"
+                      readonly
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="degree" class="form-label">Título</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="degree"
+                      value="Ingeniero en TI"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cover Letter -->
+            <div class="card mb-4">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <i class="bi bi-file-text me-2"></i>Carta de Presentación
+                </h5>
+                <small class="text-muted"
+                  >Explica por qué eres el candidato ideal para este
+                  puesto</small
+                >
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label for="coverLetter" class="form-label"
+                    >Carta de Presentación *</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="coverLetter"
+                    rows="8"
+                    required
+                    placeholder="Estimado equipo de TechSolutions,&#10;&#10;Me dirijo a ustedes para expresar mi interés en la posición de Desarrollador Full Stack..."
+                  >
+Estimado equipo de TechSolutions,
+
+Me dirijo a ustedes para expresar mi interés en la posición de Desarrollador Full Stack anunciada en la plataforma ULEAM Empleos. Como recién graduado de Tecnología de la Información de la Universidad ULEAM, estoy emocionado por la oportunidad de contribuir al crecimiento y éxito de su empresa.
+
+Durante mis estudios universitarios y prácticas profesionales, he desarrollado sólidas competencias en JavaScript, Angular, Node.js y bases de datos, tecnologías que considero fundamentales para este rol. Mi experiencia en ZGames me permitió trabajar en proyectos reales de desarrollo web, donde pude aplicar metodologías ágiles y colaborar efectivamente en equipos multidisciplinarios.
+
+Estoy particularmente atraído por la cultura de innovación de TechSolutions y su compromiso con el desarrollo profesional de sus empleados. Creo que mi pasión por la tecnología, combinada con mi formación académica sólida y mi capacidad de adaptación, me convertirían en una valiosa adición a su equipo.
+
+Agradezco su consideración y espero la oportunidad de discutir cómo puedo contribuir al éxito de TechSolutions.
+
+Atentamente,
+Danny Jesus Zambrano Mera</textarea
+                  >
+                  <div class="invalid-feedback">
+                    Por favor escribe una carta de presentación.
+                  </div>
+                  <div class="form-text">
+                    <i class="bi bi-info-circle me-1"></i>Tip: Menciona tus
+                    habilidades relevantes y por qué te interesa trabajar en
+                    esta empresa.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Documents -->
+            <div class="card mb-4">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <i class="bi bi-file-earmark-arrow-up me-2"></i>Documentos
+                </h5>
+                <small class="text-muted"
+                  >Adjunta los documentos requeridos para tu postulación</small
+                >
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="resume" class="form-label"
+                      >Currículum Vitae *</label
+                    >
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="resume"
+                      accept=".pdf,.doc,.docx"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Por favor sube tu currículum vitae.
+                    </div>
+                    <div class="form-text">
+                      Formatos aceptados: PDF, DOC, DOCX (máx. 5MB)
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="portfolio" class="form-label"
+                      >Portafolio (Opcional)</label
+                    >
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="portfolio"
+                      accept=".pdf,.zip"
+                    />
+                    <div class="form-text">
+                      Proyectos, trabajos o muestras de tu experiencia
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="transcript" class="form-label"
+                      >Record Académico</label
+                    >
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="transcript"
+                      accept=".pdf"
+                    />
+                    <div class="form-text">
+                      Certificado de notas o título universitario
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="certificates" class="form-label"
+                      >Certificaciones</label
+                    >
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="certificates"
+                      accept=".pdf,.zip"
+                      multiple
+                    />
+                    <div class="form-text">
+                      Certificaciones técnicas o cursos relevantes
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Questions -->
+            <div class="card mb-4">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <i class="bi bi-question-circle me-2"></i>Preguntas
+                  Adicionales
+                </h5>
+                <small class="text-muted"
+                  >La empresa quiere conocer más sobre ti</small
+                >
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label for="experience" class="form-label"
+                    >¿Tienes experiencia previa en desarrollo web? Describe
+                    brevemente. *</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="experience"
+                    rows="4"
+                    required
+                    placeholder="Describe tu experiencia en desarrollo web, proyectos realizados, tecnologías utilizadas..."
+                  >
+Sí, tengo experiencia de 1 año como desarrollador junior en ZGames, donde trabajé en el desarrollo de aplicaciones web utilizando Angular y Node.js. También completé varios proyectos universitarios incluyendo un sistema de gestión académica y una aplicación de e-commerce. Durante mis prácticas pre-profesionales desarrollé habilidades en bases de datos MySQL y MongoDB, y tengo experiencia trabajando con Git para control de versiones.</textarea
+                  >
+                  <div class="invalid-feedback">
+                    Por favor describe tu experiencia.
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="availability" class="form-label"
+                    >¿Cuándo podrías comenzar a trabajar? *</label
+                  >
+                  <select class="form-select" id="availability" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="inmediato" selected>Inmediatamente</option>
+                    <option value="1-semana">En 1 semana</option>
+                    <option value="2-semanas">En 2 semanas</option>
+                    <option value="1-mes">En 1 mes</option>
+                    <option value="otro">
+                      Otro (especificar en comentarios)
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Por favor indica tu disponibilidad.
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="salary" class="form-label"
+                    >¿Cuáles son tus expectativas salariales? *</label
+                  >
+                  <select class="form-select" id="salary" required>
+                    <option value="">Selecciona un rango</option>
+                    <option value="500-700">$500 - $700</option>
+                    <option value="700-900">$700 - $900</option>
+                    <option value="800-1200" selected>$800 - $1200</option>
+                    <option value="1000-1500">$1000 - $1500</option>
+                    <option value="negociable">Negociable</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Por favor indica tus expectativas salariales.
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="motivation" class="form-label"
+                    >¿Por qué quieres trabajar en TechSolutions? *</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="motivation"
+                    rows="4"
+                    required
+                    placeholder="Explica qué te motiva a trabajar en esta empresa específicamente..."
+                  >
+TechSolutions se destaca por su enfoque en la innovación tecnológica y su compromiso con el desarrollo profesional de sus empleados. Me atrae especialmente la oportunidad de trabajar en proyectos desafiantes que impacten positivamente en la comunidad manabita. Además, la cultura empresarial que promueve el aprendizaje continuo y el trabajo en equipo se alinea perfectamente con mis valores profesionales y mis objetivos de crecimiento en el área de desarrollo de software.</textarea
+                  >
+                  <div class="invalid-feedback">
+                    Por favor explica tu motivación.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="form-check mb-3">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="terms"
+                    required
+                  />
+                  <label class="form-check-label" for="terms">
+                    Acepto los
+                    <a href="#" class="text-decoration-none"
+                      >términos y condiciones</a
+                    >
+                    de la postulación y autorizo el tratamiento de mis datos
+                    personales. *
+                  </label>
+                  <div class="invalid-feedback">
+                    Debes aceptar los términos y condiciones.
+                  </div>
+                </div>
+
+                <div class="form-check mb-3">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="notifications"
+                  />
+                  <label class="form-check-label" for="notifications">
+                    Deseo recibir notificaciones sobre el estado de mi
+                    postulación por email.
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="card">
+              <div class="card-body text-center">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-lg px-5 btn-apply"
+                >
+                  <i class="bi bi-send me-2"></i>Enviar Postulación
+                </button>
+                <p class="text-muted mt-3 mb-0">
+                  <i class="bi bi-info-circle me-1"></i>
+                  Revisaremos tu postulación y te contactaremos en un plazo de 5
+                  días hábiles.
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+          <!-- Application Tips -->
+          <div class="card mb-4 sticky-top" style="top: 100px">
+            <div class="card-header">
+              <h6 class="mb-0">
+                <i class="bi bi-lightbulb me-2"></i>Consejos para tu Postulación
+              </h6>
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <h6 class="text-primary-custom">✓ Carta de Presentación</h6>
+                <p class="small text-muted mb-0">
+                  Personaliza tu carta mencionando por qué te interesa
+                  específicamente esta empresa.
+                </p>
+              </div>
+
+              <div class="mb-3">
+                <h6 class="text-primary-custom">✓ Currículum Actualizado</h6>
+                <p class="small text-muted mb-0">
+                  Asegúrate de que tu CV esté actualizado con tu experiencia más
+                  reciente.
+                </p>
+              </div>
+
+              <div class="mb-3">
+                <h6 class="text-primary-custom">✓ Documentos Legibles</h6>
+                <p class="small text-muted mb-0">
+                  Sube documentos en formato PDF de buena calidad y fácil
+                  lectura.
+                </p>
+              </div>
+
+              <div class="mb-0">
+                <h6 class="text-primary-custom">✓ Respuestas Completas</h6>
+                <p class="small text-muted mb-0">
+                  Responde todas las preguntas de manera detallada y honesta.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Job Summary -->
+          <div class="card">
+            <div class="card-header">
+              <h6 class="mb-0">
+                <i class="bi bi-briefcase me-2"></i>Resumen del Empleo
+              </h6>
+            </div>
+            <div class="card-body">
+              <h6 class="card-title">Desarrollador Full Stack</h6>
+              <p class="text-muted mb-2">TechSolutions S.A.</p>
+              <div class="mb-2">
+                <small class="text-muted d-block">Ubicación</small>
+                <span>Manta, Manabí</span>
+              </div>
+              <div class="mb-2">
+                <small class="text-muted d-block">Salario</small>
+                <span class="job-salary">$800 - $1200</span>
+              </div>
+              <div class="mb-3">
+                <small class="text-muted d-block">Modalidad</small>
+                <span>Presencial - Tiempo Completo</span>
+              </div>
+              <a
+                href="job-detail.html"
+                class="btn btn-outline-primary btn-sm w-100"
+              >
+                <i class="bi bi-eye me-2"></i>Ver Detalles del Empleo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-0">
+              &copy; 2025 ULEAM Empleos. Todos los derechos reservados.
+            </p>
+          </div>
+          <div class="col-md-6 text-end">
+            <a href="contact.html" class="text-white text-decoration-none me-3"
+              >Contacto</a
+            >
+            <a href="#" class="text-white text-decoration-none">Ayuda</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
