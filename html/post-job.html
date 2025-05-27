@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <m              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-              >
-                <i class="bi bi-building me-1"></i>ZGames Technology
-              </a>t="UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Publicar Empleo - ULEAM Empleos</title>
     <link
@@ -24,9 +16,9 @@
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="../index.html">
+        <a class="navbar-brand text-primary-custom" href="../index.html">
           <i class="bi bi-mortarboard-fill me-2"></i>ULEAM Empleos
         </a>
         <button
@@ -63,7 +55,6 @@
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
-                style="color: white !important"
               >
                 <i class="bi bi-building me-1"></i>ZGames Technology
               </a>
@@ -74,7 +65,11 @@
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    onclick="showAlert('Configuración', 'Esta funcionalidad estará disponible próximamente.')"
+                  >
                     <i class="bi bi-gear me-2"></i>Configuración</a
                   >
                 </li>
@@ -240,5 +235,67 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/main.js"></script>
+    <script>
+      // Function to show alerts
+      function showAlert(title, message) {
+        const alert = document.createElement('div');
+        alert.className =
+          'alert alert-info alert-dismissible fade show position-fixed';
+        alert.style.cssText =
+          'top: 100px; right: 20px; z-index: 9999; width: 300px;';
+        alert.innerHTML = `
+          <strong>${title}</strong><br>
+          ${message}
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
+        document.body.appendChild(alert);
+
+        setTimeout(() => {
+          if (alert.parentNode) {
+            alert.remove();
+          }
+        }, 4000);
+      }
+
+      // Form submission handler
+      document
+        .getElementById('postJobForm')
+        .addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          // Show success message
+          const alert = document.createElement('div');
+          alert.className = 'alert alert-success alert-dismissible fade show';
+          alert.innerHTML = `
+          <i class="bi bi-check-circle me-2"></i>
+          ¡Oferta de empleo publicada exitosamente!
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
+
+          const form = this;
+          form.parentNode.insertBefore(alert, form);
+
+          // Reset form
+          form.reset();
+
+          // Auto-redirect after 2 seconds
+          setTimeout(() => {
+            window.location.href = 'company-dashboard.html';
+          }, 2000);
+        });
+
+      // Cancel button handler
+      document
+        .querySelector('.btn-outline-danger')
+        .addEventListener('click', function () {
+          if (
+            confirm(
+              '¿Estás seguro de que quieres cancelar? Se perderán todos los cambios.'
+            )
+          ) {
+            window.location.href = 'company-dashboard.html';
+          }
+        });
+    </script>
   </body>
 </html>
