@@ -29,135 +29,310 @@
             </div>
             <div class="card-body p-5">
               <form id="registerForm" novalidate>
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="firstName" class="form-label">
-                      <i class="bi bi-person me-2"></i>Nombres
+                <!-- Role Selection -->
+                <div class="mb-4">
+                  <label class="form-label">
+                    <i class="bi bi-person-badge me-2"></i>Tipo de Usuario
+                  </label>
+                  <div class="row">
+                    <div class="col-6">
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="userType"
+                        id="studentRoleReg"
+                        value="student"
+                        checked
+                      />
+                      <label
+                        class="btn btn-outline-primary w-100"
+                        for="studentRoleReg"
+                      >
+                        <i class="bi bi-mortarboard d-block mb-2"></i>
+                        Graduado ULEAM
+                      </label>
+                    </div>
+                    <div class="col-6">
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="userType"
+                        id="recruiterRoleReg"
+                        value="recruiter"
+                      />
+                      <label
+                        class="btn btn-outline-success w-100"
+                        for="recruiterRoleReg"
+                      >
+                        <i class="bi bi-building d-block mb-2"></i>
+                        Empresa/Reclutador
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Student Fields -->
+                <div id="studentFields">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="firstName" class="form-label">
+                        <i class="bi bi-person me-2"></i>Nombres
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="firstName"
+                        required
+                        placeholder="Tus nombres"
+                      />
+                      <div class="invalid-feedback">
+                        Por favor ingresa tus nombres.
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="lastName" class="form-label">
+                        <i class="bi bi-person me-2"></i>Apellidos
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="lastName"
+                        required
+                        placeholder="Tus apellidos"
+                      />
+                      <div class="invalid-feedback">
+                        Por favor ingresa tus apellidos.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="studentEmail" class="form-label">
+                      <i class="bi bi-envelope me-2"></i>Correo Electrónico
+                      ULEAM
+                    </label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="studentEmail"
+                      required
+                      placeholder="tu.nombre@uleam.edu.ec"
+                      pattern=".*@uleam\.edu\.ec$"
+                    />
+                    <div class="invalid-feedback">
+                      Debes usar tu correo institucional de ULEAM
+                      (@uleam.edu.ec).
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="cedula" class="form-label">
+                      <i class="bi bi-card-text me-2"></i>Cédula de Identidad
                     </label>
                     <input
                       type="text"
                       class="form-control"
-                      id="firstName"
+                      id="cedula"
                       required
-                      placeholder="Tus nombres"
+                      placeholder="1234567890"
+                      pattern="[0-9]{10}"
                     />
                     <div class="invalid-feedback">
-                      Por favor ingresa tus nombres.
+                      Ingresa una cédula válida de 10 dígitos.
                     </div>
                   </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="lastName" class="form-label">
-                      <i class="bi bi-person me-2"></i>Apellidos
+
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="career" class="form-label">
+                        <i class="bi bi-mortarboard me-2"></i>Carrera
+                      </label>
+                      <select class="form-select" id="career" required>
+                        <option value="">Selecciona tu carrera</option>
+                        <option value="ingenieria-sistemas">
+                          Tecnología de la Información
+                        </option>
+                        <option value="medicina">Medicina</option>
+                        <option value="derecho">Derecho</option>
+                        <option value="administracion">
+                          Administración de Empresas
+                        </option>
+                        <option value="contabilidad">
+                          Contabilidad y Auditoría
+                        </option>
+                        <option value="psicologia">Psicología</option>
+                        <option value="enfermeria">Enfermería</option>
+                        <option value="educacion">Educación</option>
+                        <option value="agronomia">Agronomía</option>
+                        <option value="otra">Otra</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Por favor selecciona tu carrera.
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="graduationYear" class="form-label">
+                        <i class="bi bi-calendar me-2"></i>Año de Graduación
+                      </label>
+                      <select class="form-select" id="graduationYear" required>
+                        <option value="">Selecciona el año</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="anterior">Anterior a 2020</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Por favor selecciona tu año de graduación.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="studentPhone" class="form-label">
+                      <i class="bi bi-telephone me-2"></i>Teléfono
+                    </label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="studentPhone"
+                      required
+                      placeholder="0987654321"
+                      pattern="[0-9]{10}"
+                    />
+                    <div class="invalid-feedback">
+                      Ingresa un número de teléfono válido de 10 dígitos.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Company/Recruiter Fields -->
+                <div id="recruiterFields" style="display: none">
+                  <div class="mb-3">
+                    <label for="companyName" class="form-label">
+                      <i class="bi bi-building me-2"></i>Nombre de la Empresa
                     </label>
                     <input
                       type="text"
                       class="form-control"
-                      id="lastName"
-                      required
-                      placeholder="Tus apellidos"
+                      id="companyName"
+                      placeholder="Nombre de tu empresa"
                     />
                     <div class="invalid-feedback">
-                      Por favor ingresa tus apellidos.
+                      Por favor ingresa el nombre de la empresa.
                     </div>
                   </div>
-                </div>
 
-                <div class="mb-3">
-                  <label for="email" class="form-label">
-                    <i class="bi bi-envelope me-2"></i>Correo Electrónico ULEAM
-                  </label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    required
-                    placeholder="tu.nombre@uleam.edu.ec"
-                    pattern=".*@uleam\.edu\.ec$"
-                  />
-                  <div class="invalid-feedback">
-                    Debes usar tu correo institucional de ULEAM (@uleam.edu.ec).
-                  </div>
-                </div>
-
-                <div class="mb-3">
-                  <label for="cedula" class="form-label">
-                    <i class="bi bi-card-text me-2"></i>Cédula de Identidad
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="cedula"
-                    required
-                    placeholder="1234567890"
-                    pattern="[0-9]{10}"
-                  />
-                  <div class="invalid-feedback">
-                    Ingresa una cédula válida de 10 dígitos.
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="career" class="form-label">
-                      <i class="bi bi-mortarboard me-2"></i>Carrera
+                  <div class="mb-3">
+                    <label for="companyEmail" class="form-label">
+                      <i class="bi bi-envelope me-2"></i>Correo Corporativo
                     </label>
-                    <select class="form-select" id="career" required>
-                      <option value="">Selecciona tu carrera</option>
-                      <option value="ingenieria-sistemas">
-                        Tecnología de la Información
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="companyEmail"
+                      placeholder="contacto@empresa.com"
+                    />
+                    <div class="invalid-feedback">
+                      Por favor ingresa un correo corporativo válido.
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="contactPerson" class="form-label">
+                        <i class="bi bi-person-badge me-2"></i>Persona de
+                        Contacto
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="contactPerson"
+                        placeholder="Nombre del contacto"
+                      />
+                      <div class="invalid-feedback">
+                        Por favor ingresa el nombre de la persona de contacto.
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="companyPhone" class="form-label">
+                        <i class="bi bi-telephone me-2"></i>Teléfono de la
+                        Empresa
+                      </label>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="companyPhone"
+                        placeholder="0987654321"
+                        pattern="[0-9]{10}"
+                      />
+                      <div class="invalid-feedback">
+                        Ingresa un número de teléfono válido.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="companySize" class="form-label">
+                      <i class="bi bi-people me-2"></i>Tamaño de la Empresa
+                    </label>
+                    <select class="form-select" id="companySize">
+                      <option value="">Selecciona el tamaño</option>
+                      <option value="startup">Startup (1-10 empleados)</option>
+                      <option value="pequena">Pequeña (11-50 empleados)</option>
+                      <option value="mediana">
+                        Mediana (51-200 empleados)
                       </option>
-                      <option value="medicina">Medicina</option>
-                      <option value="derecho">Derecho</option>
-                      <option value="administracion">
-                        Administración de Empresas
+                      <option value="grande">
+                        Grande (201-1000 empleados)
                       </option>
-                      <option value="contabilidad">
-                        Contabilidad y Auditoría
+                      <option value="corporacion">
+                        Corporación (1000+ empleados)
                       </option>
-                      <option value="psicologia">Psicología</option>
-                      <option value="enfermeria">Enfermería</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Por favor selecciona el tamaño de la empresa.
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="companyIndustry" class="form-label">
+                      <i class="bi bi-gear me-2"></i>Sector/Industria
+                    </label>
+                    <select class="form-select" id="companyIndustry">
+                      <option value="">Selecciona el sector</option>
+                      <option value="tecnologia">Tecnología</option>
+                      <option value="salud">Salud</option>
                       <option value="educacion">Educación</option>
-                      <option value="agronomia">Agronomía</option>
-                      <option value="otra">Otra</option>
+                      <option value="finanzas">Finanzas</option>
+                      <option value="retail">Retail</option>
+                      <option value="manufactura">Manufactura</option>
+                      <option value="construccion">Construcción</option>
+                      <option value="consultoria">Consultoría</option>
+                      <option value="gobierno">Gobierno</option>
+                      <option value="otros">Otros</option>
                     </select>
                     <div class="invalid-feedback">
-                      Por favor selecciona tu carrera.
+                      Por favor selecciona el sector de la empresa.
                     </div>
                   </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="graduationYear" class="form-label">
-                      <i class="bi bi-calendar me-2"></i>Año de Graduación
-                    </label>
-                    <select class="form-select" id="graduationYear" required>
-                      <option value="">Selecciona el año</option>
-                      <option value="2025">2025</option>
-                      <option value="2024">2024</option>
-                      <option value="2023">2023</option>
-                      <option value="2022">2022</option>
-                      <option value="2021">2021</option>
-                      <option value="2020">2020</option>
-                      <option value="anterior">Anterior a 2020</option>
-                    </select>
-                    <div class="invalid-feedback">
-                      Por favor selecciona tu año de graduación.
-                    </div>
-                  </div>
-                </div>
 
-                <div class="mb-3">
-                  <label for="phone" class="form-label">
-                    <i class="bi bi-telephone me-2"></i>Teléfono
-                  </label>
-                  <input
-                    type="tel"
-                    class="form-control"
-                    id="phone"
-                    required
-                    placeholder="0987654321"
-                    pattern="[0-9]{10}"
-                  />
-                  <div class="invalid-feedback">
-                    Ingresa un número de teléfono válido de 10 dígitos.
+                  <div class="mb-3">
+                    <label for="companyDescription" class="form-label">
+                      <i class="bi bi-file-text me-2"></i>Descripción de la
+                      Empresa
+                    </label>
+                    <textarea
+                      class="form-control"
+                      id="companyDescription"
+                      rows="3"
+                      placeholder="Breve descripción de tu empresa y sus actividades"
+                    ></textarea>
+                    <div class="invalid-feedback">
+                      Por favor proporciona una descripción de la empresa.
+                    </div>
                   </div>
                 </div>
 

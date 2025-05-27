@@ -1,0 +1,12 @@
+# Archivos de documentación
+*.md
+
+# Archivos temporales
+*-simple.html
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

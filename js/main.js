@@ -1,4 +1,4 @@
-// JavaScript principal para ULEAM Empleos - Versión Simplificada
+// JavaScript principal para ULEAM Empleos - Sistema con Roles
 
 document.addEventListener('DOMContentLoaded', function () {
   initializeApp();
@@ -8,6 +8,133 @@ function initializeApp() {
   setupNavigation();
   setupBasicForms();
   setupLogout();
+  setupRoleSystem();
+  setupPasswordToggle();
+}
+
+// Sistema de roles
+function setupRoleSystem() {
+  setupRoleToggling();
+  setupLoginForm();
+  setupRegisterForm();
+}
+
+// Configurar el cambio entre roles en formularios
+function setupRoleToggling() {
+  const roleInputs = document.querySelectorAll('input[name="userType"]');
+  roleInputs.forEach((input) => {
+    input.addEventListener('change', handleRoleChange);
+  });
+
+  // Ejecutar al cargar la página para mostrar campos correctos
+  if (roleInputs.length > 0) {
+    handleRoleChange();
+  }
+}
+
+// Manejar cambio de rol
+function handleRoleChange() {
+  const selectedRole = document.querySelector(
+    'input[name="userType"]:checked'
+  )?.value;
+  const studentFields = document.getElementById('studentFields');
+  const recruiterFields = document.getElementById('recruiterFields');
+
+  if (studentFields && recruiterFields) {
+    if (selectedRole === 'recruiter') {
+      studentFields.style.display = 'none';
+      recruiterFields.style.display = 'block';
+
+      // Actualizar campos requeridos
+      updateRequiredFields(studentFields, false);
+      updateRequiredFields(recruiterFields, true);
+    } else {
+      studentFields.style.display = 'block';
+      recruiterFields.style.display = 'none';
+
+      // Actualizar campos requeridos
+      updateRequiredFields(studentFields, true);
+      updateRequiredFields(recruiterFields, false);
+    }
+  }
+}
+
+// Actualizar campos requeridos basado en el rol
+function updateRequiredFields(container, isRequired) {
+  const inputs = container.querySelectorAll('input, select, textarea');
+  inputs.forEach((input) => {
+    if (isRequired) {
+      if (input.hasAttribute('data-required')) {
+        input.setAttribute('required', '');
+      }
+    } else {
+      input.removeAttribute('required');
+    }
+  });
+}
+
+// Configurar formulario de login
+function setupLoginForm() {
+  const loginForm = document.getElementById('loginForm');
+  if (loginForm) {
+    loginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      e.stopPropagation(); // Detener la propagación del evento
+
+      const userType = document.querySelector(
+        'input[name="userType"]:checked'
+      )?.value;
+      const email = document.getElementById('email')?.value;
+
+      if (this.checkValidity()) {
+        showAlert('Iniciando sesión...', 'info');
+
+        // Simular login y redireccionar según el rol
+        setTimeout(() => {
+          if (userType === 'recruiter') {
+            window.location.href = 'company-dashboard.html';
+          } else {
+            window.location.href = 'home.html';
+          }
+        }, 1500);
+      }
+
+      this.classList.add('was-validated');
+    });
+  }
+}
+
+// Configurar formulario de registro
+function setupRegisterForm() {
+  const registerForm = document.getElementById('registerForm');
+  if (registerForm) {
+    registerForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      e.stopPropagation(); // Detener la propagación del evento
+
+      const userType = document.querySelector(
+        'input[name="userType"]:checked'
+      )?.value;
+
+      if (this.checkValidity()) {
+        showAlert('Creando cuenta...', 'info');
+
+        // Simular registro exitoso
+        setTimeout(() => {
+          showAlert('¡Cuenta creada exitosamente! Redirigiendo...', 'success');
+          setTimeout(() => {
+            if (userType === 'recruiter') {
+              window.location.href = 'company-dashboard.html';
+            } else {
+              window.location.href = 'home.html';
+            }
+          }, 2000);
+        }, 1500);
+      }
+
+      this.classList.add('was-validated');
+    });
+  }
 }
 
 // Configurar navegación activa
@@ -48,6 +175,26 @@ function setupLogout() {
       }
     });
   });
+}
+
+// Configurar toggle de contraseña
+function setupPasswordToggle() {
+  const togglePassword = document.getElementById('togglePassword');
+  const passwordInput = document.getElementById('password');
+
+  if (togglePassword && passwordInput) {
+    togglePassword.addEventListener('click', function () {
+      const type =
+        passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+
+      const icon = this.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('bi-eye');
+        icon.classList.toggle('bi-eye-slash');
+      }
+    });
+  }
 }
 
 // Función para mostrar alertas
@@ -167,8 +314,12 @@ function searchJobs(searchTerm) {
 
 // Event listeners globales
 document.addEventListener('click', function (e) {
-  // Manejar clicks en botones de acción simulada
-  if (e.target.classList.contains('btn-login')) {
+  // Manejar clicks en botones de acción simulada (pero NO en formularios específicos)
+  if (
+    e.target.classList.contains('btn-login') &&
+    !e.target.closest('#loginForm') &&
+    !e.target.closest('#registerForm')
+  ) {
     e.preventDefault();
     simulateAction('login');
     setTimeout(() => {
@@ -176,7 +327,11 @@ document.addEventListener('click', function (e) {
     }, 2000);
   }
 
-  if (e.target.classList.contains('btn-register')) {
+  if (
+    e.target.classList.contains('btn-register') &&
+    !e.target.closest('#loginForm') &&
+    !e.target.closest('#registerForm')
+  ) {
     e.preventDefault();
     simulateAction('register');
     setTimeout(() => {

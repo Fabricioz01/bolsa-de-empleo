@@ -1,0 +1,93 @@
+{
+  "project": {
+    "name": "ULEAM Empleos",
+    "version": "1.0.0",
+    "description": "Portal de empleo para graduados de ULEAM",
+    "type": "static-website",
+    "created": "2025-05-26",
+    "university": "Universidad Laica Eloy Alfaro de Manabí"
+  },
+  "structure": {
+    "entry_point": "index.html",
+    "pages": {
+      "public": [
+        "index.html",
+        "html/login.html",
+        "html/register.html",
+        "html/contact.html"
+      ],
+      "graduate": [
+        "html/home.html",
+        "html/profile.html",
+        "html/jobs.html",
+        "html/job-detail.html",
+        "html/apply.html"
+      ],
+      "recruiter": [
+        "html/company-dashboard.html",
+        "html/post-job.html",
+        "html/manage-jobs.html",
+        "html/applicants.html",
+        "html/company-profile.html"
+      ]
+    }
+  },
+  "features": {
+    "authentication": {
+      "roles": ["student", "recruiter"],
+      "validation": true,
+      "dynamic_forms": true
+    },
+    "user_interfaces": {
+      "graduate_dashboard": true,
+      "company_dashboard": true,
+      "job_management": true,
+      "candidate_management": true
+    },
+    "responsive_design": true,
+    "bootstrap_integration": true,
+    "javascript_validation": true
+  },
+  "sample_data": {
+    "primary_graduate": {
+      "name": "Danny Jesus Zambrano Mera",
+      "email": "e1315555795@live.uleam.edu.ec",
+      "phone": "+593 99 413 8252",
+      "address": "Leonidas Proaño, Montecristi",
+      "career": "Tecnología de la Información"
+    },
+    "primary_company": {
+      "name": "ZGames Technology",
+      "industry": "Tecnología",
+      "size": "11-50 empleados",
+      "email": "rrhh@zgames.tech",
+      "location": "Manta, Manabí, Ecuador"
+    }
+  },
+  "technologies": {
+    "frontend": {
+      "html": "5",
+      "css": "3",
+      "javascript": "ES6+",
+      "bootstrap": "5.3.0",
+      "bootstrap_icons": "1.10.5"
+    }
+  },
+  "browser_support": [
+    "Chrome >= 90",
+    "Firefox >= 88",
+    "Safari >= 14",
+    "Edge >= 90"
+  ],
+  "deployment": {
+    "type": "static",
+    "requirements": "Web server or file:// protocol",
+    "recommended": "HTTP server for full functionality"
+  },
+  "status": {
+    "development": "completed",
+    "testing": "completed",
+    "documentation": "completed",
+    "ready_for_production": true
+  }
+}

@@ -29,6 +29,48 @@
             </div>
             <div class="card-body p-5">
               <form id="loginForm" novalidate>
+                <!-- Role Selection -->
+                <div class="mb-4">
+                  <label class="form-label">
+                    <i class="bi bi-person-badge me-2"></i>Tipo de Usuario
+                  </label>
+                  <div class="row">
+                    <div class="col-6">
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="userType"
+                        id="studentRole"
+                        value="student"
+                        checked
+                      />
+                      <label
+                        class="btn btn-outline-primary w-100"
+                        for="studentRole"
+                      >
+                        <i class="bi bi-mortarboard d-block mb-2"></i>
+                        Graduado
+                      </label>
+                    </div>
+                    <div class="col-6">
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="userType"
+                        id="recruiterRole"
+                        value="recruiter"
+                      />
+                      <label
+                        class="btn btn-outline-success w-100"
+                        for="recruiterRole"
+                      >
+                        <i class="bi bi-building d-block mb-2"></i>
+                        Reclutador
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="mb-4">
                   <label for="email" class="form-label">
                     <i class="bi bi-envelope me-2"></i>Correo Electrónico
